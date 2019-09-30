@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Patrick Lef</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css"
+    />
+    <style>
+      body {
+        font-family: arial;
+
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      #content {
+        flex: 1;
+        padding-top: 20%;
+        margin: 0 auto;
+        width: 600px;
+        font-size: 2rem;
+        line-height: 3rem;
+        -webkit-font-smoothing: antialiased;
+        color: #333346;
+        text-shadow: 1px 1px 0px rgb(0, 0, 0, 6%);
+      }
+
+      .header {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+
+      .contact {
+        float: right;
+        padding: 20px;
+        color: #545454;
+        margin-top: 30px;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        -webkit-transition: opacity 0.7s ease-in;
+        -moz-transition: opacity 0.7s ease-in;
+        -o-transition: opacity 0.7s ease-in;
+        -ms-transition: opacity 0.7s ease-in;
+        transition: opacity 0.7s ease-in;
+      }
+
+      .contact a {
+        color: #e22ea3;
+        text-decoration: none;
+      }
+      @media screen and (max-width: 600px) {
+        .header {
+          font-size: 2.5rem;
+        }
+
+        #content {
+          width: calc(100% - 40px);
+          padding: 40% 20px 0 20px;
+          font-size: 1.2rem;
+        }
+
+        .contact {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <span class="header">I'm Patrick Lef</span><br />
+      And I'm a
+      <span class="type-effect"></span>
+    </div>
+    <footer>
+      <div class="contact">
+        <span>Reach me</span>
+        <span>
+          by email <a href="mailto:patrick@lef.io">patrick@lef.io</a>
+        </span>
+        <span>or call <a href="tel:+46737008714">+46 73 7008 14</a>. </span>
+        <span
+          >You can also find me on
+          <a href="https://www.linkedin.com/in/patricklef/">LinkedIn</a>
+        </span>
+      </div>
+    </footer>
+    <script
+      type="text/javascript"
+      id="typeit"
+      async
+      src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"
+    ></script>
+    <script type="text/javascript">
+      var script = document.querySelector("#typeit")
+      script.addEventListener("load", function() {
+        var options = {
+          strings: [
+            "Developer 🙈",
+            "CTO 🤔",
+            "Product Manager 😅",
+            "guy who turns ideas into products 🦄"
+          ],
+          typeSpeed: 30,
+          onComplete: (arrayPos, self) => {
+            var cursor = document.getElementsByClassName("typed-cursor")[0]
+            cursor.style.display = "none"
+            var contact = document.getElementsByClassName("contact")[0]
+            contact.style.opacity = "1"
+          }
+        }
+
+        var typed = new Typed(".type-effect", options)
+      })
+    </script>
+  </body>
+</html>
